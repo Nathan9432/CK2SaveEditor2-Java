@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.SpringLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class MainWindow {
 
@@ -51,5 +52,10 @@ public class MainWindow {
 		springLayout.putConstraint(SpringLayout.NORTH, loadSaveButton, 0, SpringLayout.NORTH, initializeButton);
 		springLayout.putConstraint(SpringLayout.WEST, loadSaveButton, 6, SpringLayout.EAST, initializeButton);
 		frame.getContentPane().add(loadSaveButton);
+		
+		JLabel lblDiplomacy = new JLabel("Diplomacy");
+		springLayout.putConstraint(SpringLayout.NORTH, lblDiplomacy, 6, SpringLayout.SOUTH, initializeButton);
+		springLayout.putConstraint(SpringLayout.EAST, lblDiplomacy, -10, SpringLayout.EAST, initializeButton);
+		frame.getContentPane().add(lblDiplomacy);
 	}
 }
