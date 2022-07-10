@@ -15,8 +15,6 @@ import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.lang.UnsupportedOperationException;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class MainWindow {
 
@@ -28,16 +26,16 @@ public class MainWindow {
 	static int[] artifactAttributes;
 	static int[] traitAttributes;
 	static String charId;
-	JSpinner spnDip;
-	JSpinner spnMar;
-	JSpinner spnSte;
-	JSpinner spnInt;
-	JSpinner spnLea;
-	JLabel lblDiplomacyShow;
-	JLabel lblMartialShow;
-	JLabel lblStewardshipShow;
-	JLabel lblIntrigueShow;
-	JLabel lblLearningShow;
+	private JSpinner spnDip;
+	private JSpinner spnMar;
+	private JSpinner spnSte;
+	private JSpinner spnInt;
+	private JSpinner spnLea;
+	private JLabel lblDiplomacyShow;
+	private JLabel lblMartialShow;
+	private JLabel lblStewardshipShow;
+	private JLabel lblIntrigueShow;
+	private JLabel lblLearningShow;
 	
 
 	/**
