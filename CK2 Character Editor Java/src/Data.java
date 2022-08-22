@@ -39,6 +39,7 @@ public class Data {
 		int[] attributes = new int[5];
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))){
 			String line = "";
+			
 			while (line != null) { // To capture the date
 				line = br.readLine();
 				if (line.contains("\tdate=")){
@@ -46,16 +47,19 @@ public class Data {
 				}
 			}
 			date = line.split("\"")[1];
+			
 			while (line != null) { // To find the character the user wants
 				line = br.readLine();
 				if (line.contains("\t\t"+charId+"="))
 					break;
 			}
+			
 			while (line != null) { // To find the character's attributes
 				line = br.readLine();
 				if (line.contains("att={"))
 					break;
 			}
+			
 			String[] attributesTemp = line.substring(8, line.length()-1).split(" ");
 			for (int i=0; i<5; i++)
 				attributes[i] = Integer.parseInt(attributesTemp[i]);
@@ -88,6 +92,7 @@ public class Data {
 		try (BufferedReader br = new BufferedReader(new FileReader(filename)); PrintWriter pw = new PrintWriter(new FileWriter (fileName))) {
 			line = br.readLine();
 			check = "\t\t" + charId + "=";
+			
 			while(line != null) { // Done to find the correct character
 				if (line.equals(check))
 					break;
@@ -95,12 +100,14 @@ public class Data {
 				line = br.readLine();
 				// TODO: If you get to the end, throw an error because the person wasn't there
 			}
+			
 			while (line != null) { // Find the attributes of the right character
 				if (line.contains("att={"))
 					break;
 				pw.print(line+"\n");
 				line = br.readLine();
 			}
+			
 			pw.print(attributeString); // Attributes
 			line = br.readLine();
 			// TODO: Traits line, immediately afterwards

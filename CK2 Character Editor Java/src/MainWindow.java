@@ -38,6 +38,7 @@ public class MainWindow {
 	JLabel lblStewardshipShow;
 	JLabel lblIntrigueShow;
 	JLabel lblLearningShow;
+	private JButton btnAddMod;
 	
 
 	/**
@@ -97,7 +98,7 @@ public class MainWindow {
 	private void initialize() {
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 400);
+		frame.setBounds(100, 100, 700, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
@@ -344,6 +345,11 @@ public class MainWindow {
 		springLayout.putConstraint(SpringLayout.EAST, btnSave, -10, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(btnSave);
 		
+		btnAddMod = new JButton("Initialize Mod");
+		springLayout.putConstraint(SpringLayout.WEST, btnAddMod, 6, SpringLayout.EAST, loadSaveButton);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnAddMod, 0, SpringLayout.SOUTH, initializeButton);
+		frame.getContentPane().add(btnAddMod);
+		
 		loadSaveButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -375,6 +381,5 @@ public class MainWindow {
 				updateViewAttributes();
 			}
 		});
-		
 	}
 }
